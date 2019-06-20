@@ -13,7 +13,12 @@ function LongestWord(sen) {
   }
 return longWord
 }
+
 // first factorial
+function FirstFactorial(num) { 
+  if (num < 2) return 1
+  return num * FirstFactorial(num-1)
+}
 
 // first reverse
 
