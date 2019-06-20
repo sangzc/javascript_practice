@@ -21,4 +21,12 @@ function FirstFactorial(num) {
 }
 
 // first reverse
-
+function FirstReverse(str) { 
+  let newStr = ''
+  for (let i=str.length-1; i>=0; i--) {
+    newStr += str[i]
+  }
+  // code goes here  
+  return newStr; 
+}
+  
