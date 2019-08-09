@@ -29,4 +29,28 @@ function FirstReverse(str) {
   // code goes here  
   return newStr; 
 }
-  
+// valid parenthesis
+var isValid = function(s) {
+    if (s.length === 0) return true
+    if (s.length <= 1) return false
+    let openBank = new Set(['{', '[', '('])
+    let closeBank = new Set(['}', ']', ')'])
+    let opposites = {
+        "}":"{",
+        ")":"(",
+        "]":"["
+    }
+    let opens = [];
+    for (let i=0; i<s.length; i++) {
+        if (openBank.has(s[i])) {
+            opens.push(s[i])
+        } else if (closeBank.has(s[i])) {
+            if (opposites[s[i]] !== opens[opens.length-1]) {
+                return false
+            } else {
+                lastOpen = opens.pop()
+            }
+        }
+    }
+    return opens.length === 0
+};
